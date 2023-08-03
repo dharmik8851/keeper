@@ -1,3 +1,21 @@
-export default function Note(props){
-  return <div class="note"><h3>{props.title}</h3><p>{props.content}</p></div>;
+import React from "react";
+import DeleteIcon from '@mui/icons-material/Delete';
+
+function Note(props){
+
+  function removeNote(event){
+    console.log(props.id);
+    props.onDelete(props.id);
+    event.preventDefault();
+  }
+  return (
+    
+    <div className="note">
+      <h1>{props.title}</h1>
+      <p>{props.content}</p>
+      <button onClick={removeNote}><DeleteIcon/></button>
+    </div>
+  );
 }
+
+export default Note;
