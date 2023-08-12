@@ -8,6 +8,11 @@ function Note(props){
     props.onDelete(props.id);
     event.preventDefault();
   }
+
+  function editNote(event){
+    props.onUpdate(props.id);
+    event.preventDefault();
+  }
   return (
     
     <div className="note">

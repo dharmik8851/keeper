@@ -15,8 +15,9 @@ export default function App(){
   function deleteNote(id){
     setNotes(notes.filter((note,idx)=>{
       return idx!=id;
-    }))
+    }));
   }
+
 
   return <div>
     <Header/>
@@ -24,6 +25,7 @@ export default function App(){
       onAdd={addNote}
     />
     <div id="note-container">
+
     {notes.map((note,index)=>{
 
       return (<Note id={index} title={note.title} content={note.content} onDelete={deleteNote}/>)
